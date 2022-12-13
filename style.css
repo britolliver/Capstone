@@ -17,3 +17,8 @@ nav > ul > li {
   flex-direction: column;
   padding: 10px;
 }
+
+.homepage-buttons {
+  display:flex;
+  justify-content:space-evenly;
+}
