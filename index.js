@@ -13,13 +13,20 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
-  // afterRender(state);
+  afterRender(state);
   router.updatePageLinks();
 }
 
-// function afterRender(state) {
-
-// }
+function afterRender(state) {
+  if (state.view === "Solo") {
+    document
+      .getElementById("overlay")
+      .addEventListener(
+        "click",
+        event => (event.target.style.display = "block")
+      );
+  }
+}
 
 router.hooks({
   before: (done, params) => {
