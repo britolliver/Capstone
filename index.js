@@ -13,23 +13,14 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
-  afterRender(state);
+  // afterRender(state);
   router.updatePageLinks();
 }
 
-function afterRender(state) {
-  if (state.view === "Solo") {
-    const overlayPractice = document.querySelector(".overlayPractice");
-    const overlay = document.querySelector("#overlay");
-    overlayPractice.addEventListener("click", () => {
-      if (overlay.style.display === "none") {
-        overlay.style.display = "block";
-      } else {
-        overlay.style.display = "none";
-      }
-    });
-  }
-}
+// function afterRender(state) {
+//   if (state.view === "Solo") {
+//   }
+// }
 
 router.hooks({
   before: (done, params) => {

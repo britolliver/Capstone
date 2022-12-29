@@ -31,14 +31,17 @@ export default state => html`
       <input type="submit" value="See Results" />
     </form>
 
-    <div class="overlayPractice">
+    <div id="myOverlay" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;
+      </a>
+      <p>Hello</p>
+    </div>
+    <div class="myOverlay" onclick="openNav()">
       <a>
         <h4>Location</h4>
         <img src="${planeWindow}" />
       </a>
-    </div>
-    <div id="overlay">
-      <p>Hello</p>
     </div>
 
     <div>
