@@ -59,6 +59,17 @@ router.hooks({
           })
           .catch(err => console.log(err));
         break;
+
+      // case "Solo":
+      //   axios
+      //     .get(
+      //       `https://developer.nps.gov/api/v1/activities?parkCode=acad&api_key=${process.env.NATIONAL_PARK_API_KEY}`
+      //     )
+      //     .then(response => {
+      //       console.log(response.data);
+      //     })
+      //     .catch(err => console.log(err));
+      //   break;
       default:
         done();
     }
