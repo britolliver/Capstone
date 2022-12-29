@@ -19,12 +19,15 @@ function render(state = store.Home) {
 
 function afterRender(state) {
   if (state.view === "Solo") {
-    document
-      .getElementById("overlay")
-      .addEventListener(
-        "click",
-        event => (event.target.style.display = "block")
-      );
+    const overlayPractice = document.querySelector(".overlayPractice");
+    const overlay = document.querySelector("#overlay");
+    overlayPractice.addEventListener("click", () => {
+      if (overlay.style.display === "none") {
+        overlay.style.display = "block";
+      } else {
+        overlay.style.display = "none";
+      }
+    });
   }
 }
 

@@ -31,14 +31,14 @@ export default state => html`
       <input type="submit" value="See Results" />
     </form>
 
-    <div>
+    <div class="overlayPractice">
       <a>
         <h4>Location</h4>
         <img src="${planeWindow}" />
       </a>
-      <div id="overlay">
-        <p>Hello</p>
-      </div>
+    </div>
+    <div id="overlay">
+      <p>Hello</p>
     </div>
 
     <div>
