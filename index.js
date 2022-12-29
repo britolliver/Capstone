@@ -3,9 +3,6 @@ import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const router = new Navigo("/");
 
@@ -16,7 +13,19 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
+  afterRender(state);
   router.updatePageLinks();
+}
+
+function afterRender(state) {
+  if (state.view === "Solo") {
+    document
+      .getElementById("overlay")
+      .addEventListener(
+        "click",
+        event => (event.target.style.display = "block")
+      );
+  }
 }
 
 router.hooks({
@@ -50,6 +59,17 @@ router.hooks({
           })
           .catch(err => console.log(err));
         break;
+
+      // case "Solo":
+      //   axios
+      //     .get(
+      //       `https://developer.nps.gov/api/v1/activities?parkCode=acad&api_key=${process.env.NATIONAL_PARK_API_KEY}`
+      //     )
+      //     .then(response => {
+      //       console.log(response.data);
+      //     })
+      //     .catch(err => console.log(err));
+      //   break;
       default:
         done();
     }
