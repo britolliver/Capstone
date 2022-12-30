@@ -35,7 +35,11 @@ export default state => html`
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
         >&times;
       </a>
-      <p>Hello</p>
+      <p>
+        If you are visiting ${state.parks.states} and are interested in
+        ${state.parks.activity}, you should visit the
+        <a href="/${state.parks.url}">${state.parks.fullName}.</a>
+      </p>
     </div>
     <div class="myOverlay" onclick="openNav()">
       <a>

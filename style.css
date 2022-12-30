@@ -45,3 +45,7 @@ nav > ul > li {
   font-size: 36px;
   margin-left: 50px;
 }
+
+a + p{
+  color:yellow;
+}
