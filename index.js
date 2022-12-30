@@ -13,20 +13,14 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
-  afterRender(state);
+  // afterRender(state);
   router.updatePageLinks();
 }
 
-function afterRender(state) {
-  if (state.view === "Solo") {
-    document
-      .getElementById("overlay")
-      .addEventListener(
-        "click",
-        event => (event.target.style.display = "block")
-      );
-  }
-}
+// function afterRender(state) {
+//   if (state.view === "Solo") {
+//   }
+// }
 
 router.hooks({
   before: (done, params) => {
@@ -60,16 +54,21 @@ router.hooks({
           .catch(err => console.log(err));
         break;
 
-      // case "Solo":
-      //   axios
-      //     .get(
-      //       `https://developer.nps.gov/api/v1/activities?parkCode=acad&api_key=${process.env.NATIONAL_PARK_API_KEY}`
-      //     )
-      //     .then(response => {
-      //       console.log(response.data);
-      //     })
-      //     .catch(err => console.log(err));
-      //   break;
+      case "Solo":
+        axios
+          .get(
+            `https://developer.nps.gov/api/v1/activities/parks?parkCode=acad&api_key=${process.env.NATIONAL_PARK_API_KEY}`
+          )
+          .then(response => {
+            console.log(response.data.data[0]);
+            store.Solo.parks.fullName = response.data.data[0].parks[0].fullName;
+            store.Solo.parks.states = response.data.data[0].parks[0].states;
+            store.Solo.parks.activity = response.data.data[0].name;
+            store.Solo.parks.url = response.data.data[0].parks[0].url;
+            done();
+          })
+          .catch(err => console.log(err));
+        break;
       default:
         done();
     }

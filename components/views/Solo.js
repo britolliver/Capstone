@@ -31,14 +31,21 @@ export default state => html`
       <input type="submit" value="See Results" />
     </form>
 
-    <div>
+    <div id="myOverlay" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;
+      </a>
+      <p>
+        If you are visiting ${state.parks.states} and are interested in
+        ${state.parks.activity}, you should visit the
+        <a href="/${state.parks.url}">${state.parks.fullName}.</a>
+      </p>
+    </div>
+    <div class="myOverlay" onclick="openNav()">
       <a>
         <h4>Location</h4>
         <img src="${planeWindow}" />
       </a>
-      <div id="overlay">
-        <p>Hello</p>
-      </div>
     </div>
 
     <div>
