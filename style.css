@@ -49,3 +49,13 @@ nav > ul > li {
 a + p{
   color:yellow;
 }
+p{
+  color:white;
+}
+h2{
+  color:white;
+}
+
+ul {
+  color:white;
+}
