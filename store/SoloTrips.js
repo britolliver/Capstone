@@ -1,9 +1,13 @@
-// import planeWindow from "../assets/img/planewindow.avif";
-// import planeInTrees from "../assets/img/planeintrees.jpg";
-// import travelMap from "../assets/img/travelmap.avif";
+import planeWindow from "../assets/img/planewindow.avif";
+import { Solo } from "./Solo";
 
-// export default [
-//   { title: "Alabama", src: `${planeWindow}` },
-//   { title: "Louisiana", src: `${planeInTrees}` },
-//   { title: "Texas", src: `${travelMap}` }
-// ];
+export default [
+  {
+    title: "St.Louis, MO",
+    src: `${planeWindow}`,
+    parkState: "Solo.parks.states",
+    activity: "Solo.parks.activity",
+    url: "Solo.parks.url",
+    parkName: "Solo.parks.fullName"
+  }
+];

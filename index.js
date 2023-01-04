@@ -13,14 +13,49 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
-  // afterRender(state);
+  afterRender(state);
   router.updatePageLinks();
 }
 
-// function afterRender(state) {
-//   if (state.view === "Solo") {
-//   }
-// }
+function afterRender(state) {
+  if (state.view === "Solo") {
+    const choices = [];
+    const beaches = Array.from(document.getElementsByClassName("beach"));
+    const mountains = Array.from(document.getElementsByClassName("mountains"));
+    document
+      .getElementById("beach")
+      .addEventListener("click", e => choices.push(e.target.id));
+    document
+      .getElementById("mountains")
+      .addEventListener("click", e => choices.push(e.target.id));
+    document.getElementById("unique").addEventListener("click", e => {
+      choices.push(e.target.id);
+    });
+
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+      console.log(beaches);
+      const section = document.querySelector("section");
+      section.innerHTML = "";
+
+      console.log(choices);
+      choices.forEach(choice => {
+        if (choice === "beach") {
+          console.log(choice);
+          console.log(beaches);
+          beaches.forEach(beach => section.appendChild(beach));
+        }
+
+        if (choice === "mountains") {
+          console.log(mountains);
+          mountains.forEach(mountain => section.appendChild(mountain));
+        }
+      });
+    });
+  }
+}
 
 router.hooks({
   before: (done, params) => {
@@ -60,7 +95,7 @@ router.hooks({
             `https://developer.nps.gov/api/v1/activities/parks?parkCode=acad&api_key=${process.env.NATIONAL_PARK_API_KEY}`
           )
           .then(response => {
-            console.log(response.data.data[0]);
+            // console.log(response.data.data[0]);
             store.Solo.parks.fullName = response.data.data[0].parks[0].fullName;
             store.Solo.parks.states = response.data.data[0].parks[0].states;
             store.Solo.parks.activity = response.data.data[0].name;
