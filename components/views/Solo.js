@@ -13,25 +13,20 @@ export default state => html`
       <label for="beach">Beach</label>
       <input id="beach" type="checkbox" name="refine" value="beach" />
 
-      <label for="mountains">Mountains</label>
-      <input id="mountains" type="checkbox" name="refine" value="mountains" />
-
       <label for="unique">Unique</label>
       <input id="unique" type="checkbox" name="refine" value="unique" />
 
-      <label for="adventure location">Adventure</label>
-      <input id="adventure" type="checkbox" name="refine" value="adventure" />
+      <label for="city">City Life</label>
+      <input id="city" type="checkbox" name="refine" value="city" />
 
-      <label for="budget">Budget</label>
-      <input id="budget" type="checkbox" name="refine" value="budget" />
-
-      <label for="location">Location</label>
-      <input id="location" type="checkbox" name="refine" value="location" />
+      <label for="camping">Camping</label>
+      <input id="camping" type="checkbox" name="refine" value="camping" />
 
       <input id="submit" type="submit" value="See Results" />
+      <input id="clearSearch" type="submit" value="Clear Search" />
     </form>
     <section>
-      <div class="myOverlay beach" onclick="openNav()">
+      <div class="myOverlay city" onclick="openNav()">
         <h4>Saint Louis, MO</h4>
         <img src="${planeWindow}" />
       </div>
@@ -103,14 +98,9 @@ export default state => html`
           <li>Other Activities: Forest Park, Science Center, Art Museum, History Museum, Botanical Gardens, City Museum($20), <a href="https://cahokiamounds.org/" target-"_blank>Cahokia Mounds</a>
           </li>
         </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
       </div>
 
-      <div class="myOverlay beach" onclick="openNY()">
+      <div class="myOverlay city" onclick="openNY()">
         <h4>New York</h4>
         <img src="${planeWindow}" />
       </div>
@@ -137,15 +127,23 @@ export default state => html`
         <li>Walk around Central Park</li>
         <li>Watch a show on Broadway</li>
         </ul>
+
+        <h3>National Parks</h3>
         <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
+          If you are visiting ${
+            state.parks.newYork
+          } and are interested in visiting the oldest and largest known excavated burial ground in North America for free and enslaved AFricans, you should visit the
+          <a href="/${state.parks.newYorkUrl}">${
+  state.parks.newYorkFullName
+}.</a> Here is a list of activities they have <ul>
+${state.parks.newYorkActivities.map(
+  activity => `<li>${activity.name}</li>`
+)}</ul>
         </p>
       </div>
 
 
-      <div class="myOverlay mountains" onclick="openTulum()">
+      <div class="myOverlay beach" onclick="openTulum()">
         <h4>Tulum, Mexico</h4>
         <img src="${planeWindow}" />
       </div>
@@ -173,14 +171,9 @@ export default state => html`
         <li>Check out night life</li>
         <li>This is more of a pricey idea but it sounds cool: jungle tour</li>
         </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
       </div>
 
-      <div class="myOverlay beach" onclick="openNO()">
+      <div class="myOverlay city" onclick="openNO()">
         <h4>New Orleans, LA</h4>
         <img src="${planeWindow}" />
       </div>
@@ -205,14 +198,10 @@ export default state => html`
       <li>Try different restaurants and food native to N.O.: gumbo, beignets, etoufee,and any seafood.</li>
       <li>Visit the French Quarter</li>
       </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+
       </div>
 
-      <div class="myOverlay" onclick="openWashDC()">
+      <div class="myOverlay city" onclick="openWashDC()">
         <h4>Washington DC</h4>
         <img src="${planeWindow}" />
       </div>
@@ -237,14 +226,24 @@ export default state => html`
       <li>Visit <a href="https://www.nps.gov/grfa/index.htm" target="_blank">Great Falls Park: </a>$10</li>
       <li>Go ot the <a href="https://thewashingtonharbour.com/" target="_blank">Washing Harbour: </a>$20</li>
       </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+
+      <h3>National Parks</h3>
+      <p>
+        If you are visiting ${
+          state.parks.washingtonDC
+        } and are interested in visiting the historical home of the National Women's Party you should visit the <a href="/${
+  state.parks.womenEqualityInDCUrl
+}">${state.parks.womenEqualityInDCFullName}.</a>
+If you have time you could also visit <a href="/${
+  state.parks.africanAmericanMemorialInDCUrl
+}">${state.parks.africanAmericanMemorialInDCFullName}</a> or the
+<a href="/${state.parks.anacostiaParkInDCUrl}">${
+  state.parks.anacostiaParkInDCFullName
+}.</a>
+      </p>
       </div>
 
-      <div class="myOverlay" onclick="openLA()">
+      <div class="myOverlay beach city" onclick="openLA()">
         <h4>Los Angeles, CA</h4>
         <img src="${planeWindow}" />
       </div>
@@ -271,14 +270,10 @@ export default state => html`
       <li>Explore Runyon Canyon Park</li>
       <li>Walk around Sunset Boulevard or Rodeo Drive</li>
       </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+
       </div>
 
-      <div class="myOverlay" onclick="openGrandCanyon()">
+      <div class="myOverlay camping" onclick="openGrandCanyon()">
         <h4>The Grand Canyon</h4>
         <img src="${planeWindow}" />
       </div>
@@ -301,14 +296,10 @@ export default state => html`
         <li>Go on a guided tour</li>
         <li>Bicycle the Grand Canyon</li>
         </ul>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+
       </div>
 
-      <div class="myOverlay" onclick="openPortland()">
+      <div class="myOverlay city" onclick="openPortland()">
         <h4>Portland, Oregon</h4>
         <img src="${planeWindow}" />
       </div>
@@ -318,83 +309,64 @@ export default state => html`
         </a>
         <h2>Portland, OR</h2>
         <img src="${planeWindow}" />
-        <p>You might have heard of Portland from different documentaries whether highlighting it's unique culture, food, or houses.It's the largest city in Oregon and is also know for its parks, bridges, art scenes, bicycle paths, etc. </p>
+        <p>You might have heard of Portland from different documentaries whether highlighting it's unique culture, food, or houses.Known as the Rose City, it's the largest city in Oregon and is also know for its parks, bridges, art scenes, bicycle paths, etc. </p>
         <h4>Lodging Ideas</h4>
         <p>
         Most of cost for a solo traveler will probably go towards lodging.
         <a href="https://www.airbnb.com/" target="_blank">AirBNB</a> is a good
         place to start looking.
       </p>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+      <h4>Activities</h4>
+      <ul>
+      <li>Explore Forest Park</li>
+      <li>Explore Washington Park which includes a zoo, two museums and a Japanese garden</li>
+      <li>Eat at <a href="https://www.mamadut.com/" target="_blank">Mama Dut</a>-the vegan Vietnamese restaurant that was featured on Netflix's Street Food</li>
+      <li>Stroll down Mississippi Avenue and find great food</li>
+      <li>Visit <a href="https://www.powells.com/" target="_blank">Powell's</a>- the world's largest independent bookstore</li>
+      </ul>
+
       </div>
 
-      //Location name
-      <div class="myOverlay" onclick="openNav()">
-        <h4>Location</h4>
+
+      <div class="myOverlay unique" onclick="openAtlanta()">
+        <h4>Atlanta, Georgia</h4>
         <img src="${planeWindow}" />
       </div>
-      <div id="myOverlay" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+      <div id="atlantaOverlay" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeAtlanta()"
           >&times;
         </a>
+        <h2>Atlanta, GA</h2>
+        <img src="${planeWindow}" />
+        <p>Not only is Atlanta the most populous city in Georgia with about almost 500 thousand people, it has gotten global recognition as a place for different movies and tv shows.It has many popular attractions and is a good place to visit even if just for a weekend.</p>
+        <h4>Lodging Ideas</h4>
         <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
+        Most of cost for a solo traveler will probably go towards lodging. Atlanta has really cool treehouses.I suggest finding one <a href="https://www.thewanderlustwithin.com/atlanta-treehouse-rentals/" target="_blank">here</a>.
+        <a href="https://www.airbnb.com/" target="_blank">AirBNB</a> is another good
+        place to start looking.
+      </p>
+      <h4>Activities</h4>
+      <ul>
+      <li>Explore the city through the Atlanta Beltline</li>
+      <li>Visit the Atlanta Botanical Gardens</li>
+      <li>Get the story behind the CDC's pioneering work at the <a href="https://www.cdc.gov/museum/" target="_blank">David Sencer CDC Museum</a></li>
+      <li>Watch a show at the Fox Theatre</li>
+      <li>Visit the Georgia Aquarium</li>
+      <li>Visit the Museum of Design Atlanta</li>
+      </ul>
+      <h3>National Parks</h3>
+      <p>
+        If you are visiting ${
+          state.parks.georgia
+        } and are interested in visiting the deadliest ground of the American Civil War, you should visit the
+        <a href="/${state.parks.georgiaUrl}">${
+  state.parks.georgiaFullName
+}.</a> Here is a list of activities they have <ul>
+${state.parks.georgiaActivities.map(
+  activity => `<li>${activity.name}</li>`
+)}</ul>
       </div>
 
-      //Location name
-      <div class="myOverlay" onclick="openNav()">
-        <h4>Location</h4>
-        <img src="${planeWindow}" />
-      </div>
-      <div id="myOverlay" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;
-        </a>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
-      </div>
-
-      //Location name
-      <div class="myOverlay" onclick="openNav()">
-        <h4>Location</h4>
-        <img src="${planeWindow}" />
-      </div>
-      <div id="myOverlay" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;
-        </a>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
-      </div>
-
-      //Location name
-      <div class="myOverlay" onclick="openNav()">
-        <h4>Location</h4>
-        <img src="${planeWindow}" />
-      </div>
-      <div id="myOverlay" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;
-        </a>
-        <p>
-          If you are visiting ${state.parks.states} and are interested in
-          ${state.parks.activity}, you should visit the
-          <a href="/${state.parks.url}">${state.parks.fullName}.</a>
-        </p>
-      </div>
     </section>
   </div>
 `;
