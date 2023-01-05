@@ -276,19 +276,7 @@ router.hooks({
           })
           .catch(err => console.log(err));
         break;
-      case "Contact":
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.CONTACT_FORM_API_URL}`)
-          .then(response => {
-            console.log(response.data); // Storing retrieved data in state
-            done();
-          })
-          .catch(error => {
-            console.log("It puked", error);
-            done();
-          });
-        break;
+
       default:
         done();
     }
