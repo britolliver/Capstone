@@ -23,7 +23,13 @@ export default state => html`
       <input id="camping" type="checkbox" name="refine" value="camping" />
 
       <input id="submit" type="submit" value="See Results" />
-      <input id="clearSearch" type="submit" value="Clear Search" />
+  <button
+        onClick="window.location.reload();"
+        class="btn"
+      >
+        Clear
+      </button>
+
     </form>
     <section>
       <div class="myOverlay city" onclick="openNav()">

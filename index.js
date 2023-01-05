@@ -63,10 +63,10 @@ function afterRender(state) {
         }
       });
     });
-    document.getElementById("clearSearch").addEventListener("click", () => {
-      const section = document.querySelector("section");
-      section.innerHTML = section;
-    });
+    // document.getElementById("clearSearch").addEventListener("click", () => {
+    //   const section = document.querySelector("section");
+    //   section.innerHTML = section;
+    // });
   }
   if (state.view === "Groups") {
     const choices = [];
@@ -116,6 +116,32 @@ function afterRender(state) {
     document.getElementById("clearSearch").addEventListener("click", () => {
       const section = document.querySelector("section");
       section.innerHTML = section;
+    });
+  }
+  if (state.view === "Contact") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+      const requestData = {
+        name: inputList.name.value,
+        email: inputList.email.value,
+        number: inputList.number.value,
+        message: inputList.message.value
+      };
+      console.log("request Body", requestData);
+      axios
+        .post(`${process.env.CONTACT_FORM_API_URL}`, requestData)
+        .then(response => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          document.getElementById("myForm").reset();
+          const newParagraph = (document.createElement("p").innerHTML =
+            "Thank you for reaching out! We have received your message and will be in touch shortly");
+          document.querySelector("div").appendChild(newParagraph);
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
     });
   }
 }
@@ -249,6 +275,19 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
+        break;
+      case "Contact":
+        // New Axios get request utilizing already made environment variable
+        axios
+          .get(`${process.env.CONTACT_FORM_API_URL}`)
+          .then(response => {
+            console.log(response.data); // Storing retrieved data in state
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
         break;
       default:
         done();
