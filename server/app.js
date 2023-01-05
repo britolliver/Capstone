@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const pizzas = require("./routers/pizzas");
+const contactForms = require("./routers/contactForms");
 
 dotenv.config();
 
@@ -45,13 +45,6 @@ app.get("/status", (request, response) => {
   response.status(200).json({ message: "Service healthy" });
 });
 
-app.get("/users/:id", (request, response) => {
-  // express adds a "params" Object to requests
-  const id = request.params.id;
-  // handle GET request for post with an id of "id"
-  response.send(JSON.stringify({ user_id: id }));
-});
-
-app.use("/pizzas", pizzas);
+app.use("/contactForms", contactForms);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
