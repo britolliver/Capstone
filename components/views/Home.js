@@ -1,14 +1,30 @@
 import html from "html-literal";
-import globeImage from "../../assets/img/nasa-vhSz50AaFAs-unsplash.jpg";
+import soloDriverInsideView from "../../assets/img/soloDriverInsideView.jpg";
+import groupLookingAtMap from "../../assets/img/groupLookingAtMap.jpg";
+import planeInTrees from "../../assets/img/planeintrees.jpg";
 
 export default state => html`
   <section>
-    <img src="${globeImage}" />
-    <div class="homepage-buttons">
-      <button type="button">SOLO</button>
-      <button type="button">COUPLES</button>
-      <button type="button">GROUPS</button>
+    <div class="logoContainer"></div>
+
+    <div class="firstContainer">
+      <div class="soloImg">
+        <img class="roundBorder" src="${soloDriverInsideView}" />
+      </div>
+      <div class="soloText">
+        <h2>This is a beautiful picture.</h2>
+      </div>
     </div>
+
+    <div class="secondContainer">
+      <div class="soloText">
+        <h2>This is a beautiful picture.</h2>
+      </div>
+      <div class="soloImg">
+        <img class="roundBorder" src="${groupLookingAtMap}" />
+      </div>
+    </div>
+
     <h3>
       The weather in ${state.weather.city} is ${state.weather.description}.
       Temperature is ${state.weather.temp}F, and it feels like

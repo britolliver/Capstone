@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default links => html`
   <nav>
-    <ul>
+    <ul class="topNav">
       ${links
         .map(
           link =>
