@@ -8,7 +8,6 @@ const router = new Navigo("/");
 
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
-  ${Header(state)}
   ${Nav(store.Links)}
   ${Main(state)}
   ${Footer()}
@@ -131,13 +130,10 @@ function afterRender(state) {
       };
       console.log("request Body", requestData);
       axios
-        .post(`${process.env.CONTACT_FORM_API_URL}`, requestData)
+        .post(`${process.env.CONTACT_FORM_API_URL}/ContactForms`, requestData)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
           document.getElementById("myForm").reset();
-          const newParagraph = (document.createElement("p").innerHTML =
-            "Thank you for reaching out! We have received your message and will be in touch shortly");
-          document.querySelector("div").appendChild(newParagraph);
         })
         .catch(error => {
           console.log("It puked", error);

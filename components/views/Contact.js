@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default () => html`
   <div>
-    <form action="" id="myForm">
+    <form id="myForm" method="POST" action="">
       <h4>GET IN TOUCH</h4>
       <h2>Contact Form</h2>
       <input id="name" type="text" name="name" placeholder="Full name*" />
@@ -23,7 +23,7 @@ export default () => html`
         maxlength="200"
       ></textarea>
 
-      <input id="submit" type="submit" value="Submit" />
+      <input id="submit" type="submit" name="submit" value="Submit" />
     </form>
   </div>
 `;
