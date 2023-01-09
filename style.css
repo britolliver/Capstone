@@ -88,6 +88,10 @@ ul {
   background-color: #050505;
   overflow: hidden;
   margin:0;
+  position:fixed;
+  left: 0;      /* ADDED */
+  top: 0;       /* ADDED */
+  width: 100%;
   }
 
   /* Style the links inside the navigation bar */
@@ -127,7 +131,6 @@ ul {
    }
 
 
-
   .secondContainer {
     display: flex;
    align-items: center;
@@ -157,5 +160,142 @@ margin-right: -250px;
 }
 
 .roundBorder{
-  border-radius: 8px;
+  border-radius: 30px;
+}
+
+.soloPage{
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+ margin-top: 80px;
+ margin-left: 250px;
+
+}
+.soloTripLayout{
+  display:flex;
+  flex-wrap:wrap;
+}
+.form{
+  display:flex;
+  justify-content: flex-start;
+ flex-direction:column;
+ position:fixed;
+ top:4.2em;
+  padding-right:25px;
+  border-radius:0px 8px 8px 0px;
+  background-color: #5b7b7a;
+  padding-bottom: 50%;
+}
+
+.formOnSide{
+  display:flex;
+}
+
+.distance{
+  margin-left: 25px;
+}
+
+.city{
+  text-align:center;
+
+}
+
+.beach{
+  text-align:center;
+}
+.camping{
+  text-align: center;
+}
+.unique{
+  text-align:center;
+}
+
+footer{
+  text-align: center;
+}
+
+.myOverlay{
+ display: flex;
+ flex-direction: column;
+ flex-wrap:wrap;
+  width:50%;
+  height:auto;
+}
+
+
+.tripImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.myOverlay:hover .tripImage{
+  opacity: 0.3;
+}
+.centered {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.myOverlay:hover .centered{
+  opacity:1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.myOverlayNY{
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+   width:50%;
+   height:auto;
+ }
+
+ .tripImageNY {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.centeredNY {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.myOverlayNY:hover .tripImageNY{
+  opacity: 0.3;
+}
+.myOverlayNY:hover .centeredNY{
+  opacity:1;
+}
+
+
+.textNY {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  text-align: center;
 }
