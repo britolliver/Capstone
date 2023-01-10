@@ -6,23 +6,32 @@ import travelMap from "../../assets/img/travelmap.avif";
 export default state => html`
 
   <form class="form" action="">
-  <p>
+  <p class="sideSearchTitle">
     Looking for something specific?
   </p>
 
-  <label for="beach">Beach</label>
-  <input id="beach" type="checkbox" name="refine" value="beach" />
+<div class="checkboxForm">
+<label for="beach" class="checkboxLabel">Beach</label>
+<input id="beach" class="checkbox" type="checkbox" name="refine" value="beach" />
+</div>
 
-  <label for="unique">Unique</label>
-  <input id="unique" type="checkbox" name="refine" value="unique" />
+<div class="checkboxForm">
+<label for="unique" class="checkboxLabel">Unique</label>
+<input id="unique" type="checkbox" name="refine" value="unique" />
+</div>
 
-  <label for="city">City Life</label>
-  <input id="city" type="checkbox" name="refine" value="city" />
+<div class="checkboxForm">
+<label for="city" class="checkboxLabel">City Life</label>
+<input id="city" type="checkbox" name="refine" value="city" />
+</div>
 
-  <label for="camping">Camping</label>
+<div class="checkboxForm">
+<label for="camping" class="checkboxLabel">Camping</label>
   <input id="camping" type="checkbox" name="refine" value="camping" />
+  </div>
 
-  <input id="submit" type="submit" value="See Results" />
+
+  <input class="btn" id="submit" type="submit" value="See Results" />
 <button
     onClick="window.location.reload();"
     class="btn"
@@ -31,20 +40,34 @@ export default state => html`
   </button>
 
 </form>
-<div class="soloPage">
-<section class="soloTripLayout">
 
-<div class="myOverlay myOverlaySTL city" onclick="openNav()">
-<img class="roundBorder tripImageSTL" src="${planeWindow}" />
-<div class="centeredSTL">
-<div class="text">Saint Louis, MO</div></div>
+<div class="soloPage main">
+
+<div class="centerText">
+<h1 class="tripsTitle">All Trips</h1>
+<p class="tripDesc">Browse this curated list of trips for your next budget trip</p>
 </div>
+
+<section class="soloTripLayout">
+<div class="myOverlay city" onclick="openNav()">
+
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Saint Louis, MO</div>
+</div>
+</div>
+
+</div>
+
 <div id="myOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
     >&times;
   </a>
-  <img src="${planeInTrees}" />
-  <h2>Saint Louis</h2>
+
+  <img class="overlayImg" src="${planeInTrees}" />
+<div class="overlayText">
+<h2>Saint Louis</h2>
   <p>
     Saint Louis is major city in Missouri known for iconic Gateway Arch.
     It's a good place to visit with lots of different things to do for the
@@ -107,18 +130,28 @@ export default state => html`
     <li>Other Activities: Forest Park, Science Center, Art Museum, History Museum, Botanical Gardens, City Museum($20), <a href="https://cahokiamounds.org/" target-"_blank>Cahokia Mounds</a>
     </li>
   </ul>
+
 </div>
 
-<div class="myOverlay myOverlayNY city" onclick="openNY()">
- <div class="centeredNY">
- <div class="textNY">New York</div></div>
-  <img class="roundBorder tripImageNY" src="${planeWindow}" />
 </div>
+
+<div class="myOverlay city" onclick="openNY()">
+
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">New York</div>
+</div>
+</div>
+
+</div>
+
 <div id="newYorkOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNY()"
     >&times;
   </a>
-  <img src="${planeWindow}" />
+  <img class="overlayImg" src="${planeInTrees}" />
+  <div class="overlayText">
   <h2>New York</h2>
   <p>Comprised of 5 boroughs and home to Times Square, the Empire State Building, the Statue of Liberty and so much is  New York City. We've all heard of it and a lot of hearts desire to visit it. New York is known for it's night life, exquisite buildings, culture and so much more. While it is very expensive to be, I'm sure with a little finesse, a solo traveler on a budget can make it work. Keep reading for more information on things you can do.</p>
   <h4>Lodging Ideas</h4>
@@ -150,20 +183,30 @@ ${state.parks.newYorkActivities.map(
   activity => `<li>${activity.name}</li>`
 )}</ul>
   </p>
+  </div>
+
 </div>
 
 
 <div class="myOverlay beach" onclick="openTulum()">
-<div class="centered"><h4 class="text">Tulum, Mexico</h4></div>
 
-  <img class="roundBorder tripImage"src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Tulum, Mexico</div>
 </div>
+</div>
+
+</div>
+
 <div id="tulumOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeTulum()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>Tulum Mexico</h2>
-  <img src="${planeWindow}" />
   <p>Tulum is a town on the Caribbean coastline of Mexico's Yucatan Peninsula. It's known for its beaches and well-preserved ruins of an ancient Mayan port city. Lots of people take trips here.It's beautiful, fun and can definitely be done on a budget.</p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -182,19 +225,29 @@ ${state.parks.newYorkActivities.map(
   <li>Check out night life</li>
   <li>This is more of a pricey idea but it sounds cool: jungle tour</li>
   </ul>
+  </div>
+
 </div>
 
 <div class="myOverlay city" onclick="openNO()">
-<div class="centered"><h4 class="text">New Orleans, LA</h4></div>
 
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">New Orleans, LA</div>
 </div>
+</div>
+
+</div>
+
 <div id="newOrleansOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNO()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>New Orleans, LA</h2>
-  <img src="${planeWindow}" />
   <p>New Orleans is a Louisiana city near the Gulf of Mexico. It's know for it's nightlife, vibrant music, and especially the cuisine. It definitely has something for everybody.If you go in February, you could catch it's Mardi Gras festivities.</p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -210,20 +263,25 @@ ${state.parks.newYorkActivities.map(
 <li>Try different restaurants and food native to N.O.: gumbo, beignets, etoufee,and any seafood.</li>
 <li>Visit the French Quarter</li>
 </ul>
+</div>
 
 </div>
 
 <div class="myOverlay city" onclick="openWashDC()">
-<div class="centered"><h4 class="text">Washington DC</h4></div>
-
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Washington DC</div>
+</div>
+</div>
 </div>
 <div id="washDCOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeWashDC()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+  <div class="overlayText">
   <h2>Washington DC</h2>
-  <img src="${planeWindow}" />
   <p>US Capitol. Neoclassical monuments and buildings. Iconic museums. Eclectic Neighborhoods. You won't regret a trip to Washington DC. </p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -254,19 +312,26 @@ If you have time you could also visit <a href="/${
   state.parks.anacostiaParkInDCFullName
 }.</a>
 </p>
+  </div>
+
 </div>
 
 <div class="myOverlay beach city" onclick="openLA()">
-<div class="centered"><h4 class="text">Los Angeles, CA</h4></div>
-
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Los Angeles, CA</div>
+</div>
+</div>
 </div>
 <div id="laOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLA()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>Los Angeles, CA</h2>
-  <img src="${planeWindow}" />
   <p>Los Angeles, or LA, is a well known city in Southern California that is also the center of America's film and television industry.There are countless reasons why people love to visit this place. Hopefully you can find a few in the activities list below. </p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -284,20 +349,25 @@ If you have time you could also visit <a href="/${
 <li>Explore Runyon Canyon Park</li>
 <li>Walk around Sunset Boulevard or Rodeo Drive</li>
 </ul>
-
+  </div>
 </div>
 
 <div class="myOverlay camping" onclick="openGrandCanyon()">
-<div class="centered"><h4 class="text">The Grand Canyon</h4></div>
-
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">The Grand Canyon</div>
+</div>
+</div>
 </div>
 <div id="grandCanyonOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeGrandCanyon()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>The Grand Canyon</h2>
-  <img src="${planeWindow}" />
   <p>The Grand Canyon National Park is located in Arizona and is absolutely stunning. It's layered with red rock and cannot be crossed by car. You must drive all the way around it. It's 277 river miles long and up to 18 miles wide so you can imagine it might take several trips to explore the whole canyon. </p>
 
   <h4>Lodging Ideas</h4>
@@ -311,20 +381,26 @@ If you have time you could also visit <a href="/${
   <li>Go on a guided tour</li>
   <li>Bicycle the Grand Canyon</li>
   </ul>
+</div>
 
 </div>
 
 <div class="myOverlay city" onclick="openPortland()">
-<div class="centered">  <h4 class="text">Portland, Oregon</h4></div>
-
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Portland, OR</div>
+</div>
+</div>
 </div>
 <div id="portlandOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closePortland()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>Portland, OR</h2>
-  <img src="${planeWindow}" />
   <p>You might have heard of Portland from different documentaries whether highlighting it's unique culture, food, or houses.Known as the Rose City, it's the largest city in Oregon and is also know for its parks, bridges, art scenes, bicycle paths, etc. </p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -340,22 +416,27 @@ If you have time you could also visit <a href="/${
 <li>Stroll down Mississippi Avenue and find great food</li>
 <li>Visit <a href="https://www.powells.com/" target="_blank">Powell's</a>- the world's largest independent bookstore</li>
 </ul>
+  </div>
 
 </div>
 
 
 <div class="myOverlay unique" onclick="openAtlanta()">
-<div class="centered">
-<h4 class="text">Atlanta, Georgia</h4></div>
-
-  <img class="roundBorder tripImage" src="${planeWindow}" />
+<div class="container">
+<img class="tripImage" src="${planeWindow}" />
+<div class="middle">
+<div class="text">Atlanta, Georgia</div>
+</div>
+</div>
 </div>
 <div id="atlantaOverlay" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeAtlanta()"
     >&times;
   </a>
+  <img class="overlayImg" src="${planeInTrees}" />
+
+  <div class="overlayText">
   <h2>Atlanta, GA</h2>
-  <img src="${planeWindow}" />
   <p>Not only is Atlanta the most populous city in Georgia with about almost 500 thousand people, it has gotten global recognition as a place for different movies and tv shows.It has many popular attractions and is a good place to visit even if just for a weekend.</p>
   <h4>Lodging Ideas</h4>
   <p>
@@ -384,7 +465,7 @@ ${state.parks.georgiaActivities.map(
   activity => `<li>${activity.name}</li>`
 )}</ul>
 </div>
-
+</div>
 </section>
 
   </div>
