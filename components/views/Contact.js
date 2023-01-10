@@ -2,28 +2,64 @@ import html from "html-literal";
 
 export default () => html`
   <div>
-    <form id="myForm" method="POST" action="">
-      <h4>GET IN TOUCH</h4>
-      <h2>Contact Form</h2>
-      <input id="name" type="text" name="name" placeholder="Full name*" />
+    <div class="centerText">
+      <h2 class="tripsTitle contactFormTitle">Contact Form</h2>
+      <h4 class="tripDesc">GET IN TOUCH</h4>
+    </div>
+    <div class="formContainer">
+      <form id="myForm" class="contactForm" method="POST" action="">
+        <div class="centerForm">
+          <div class="padding">
+            <input
+              id="name"
+              class="box inputHeight"
+              type="text"
+              name="name"
+              placeholder="Full name*"
+            />
+          </div>
 
-      <input id="email" type="email" name="email" placeholder="Email*" />
+          <div class="padding">
+            <input
+              id="email"
+              class="box inputHeight"
+              type="email"
+              name="email"
+              placeholder="Email*"
+            />
+          </div>
 
-      <input
-        id="number"
-        type="number"
-        name="number"
-        placeholder="Phone Number*"
-      />
+          <div class="padding">
+            <input
+              id="number"
+              class="box inputHeight"
+              type="number"
+              name="number"
+              placeholder="Phone Number*"
+            />
+          </div>
 
-      <textarea
-        name="message"
-        placeholder="Type your message here*"
-        minlength="10"
-        maxlength="200"
-      ></textarea>
+          <div class="padding">
+            <textarea
+              name="message"
+              class="box textAreaHeight"
+              placeholder="Type your message here*"
+              minlength="10"
+              maxlength="200"
+            ></textarea>
+          </div>
 
-      <input id="submit" type="submit" name="submit" value="Submit" />
-    </form>
+          <div class="padding">
+            <input
+              id="submit"
+              class="btn"
+              type="submit"
+              name="submit"
+              value="Submit"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 `;
