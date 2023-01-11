@@ -1,3 +1,10 @@
+@font-face{
+  font-family: "allFont";
+  src: url('./assets/fonts/DMSans-Regular.ttf');
+}
+*{
+  font-family: "allFont";
+}
 body{
   margin:0;
   padding:0;
@@ -69,8 +76,8 @@ nav > ul > li {
   margin-left: 50px;
 }
 
-a + p{
-  color:yellow;
+a{
+  color: #EDF2F4;
 }
 p{
   color:white;
@@ -224,8 +231,8 @@ footer{
   opacity: 1;
 }
 .text {
-  color: white;
-  font-size: 16px;
+  color: #7c3626;
+  font-size: 40px;
 text-align: center;
   display: none;
 }
@@ -233,8 +240,9 @@ text-align: center;
 .container:hover .text{
 display:flex;
 justify-content: center;
-margin-top: -160px;
-margin-left: 565px;
+margin-top: -200px;
+margin-left: 590px;
+font-weight: bold;
 }
 
 .btn{
@@ -292,6 +300,16 @@ margin-left: 565px;
   padding: 16px;
 }
 
+.aboutText{
+text-align:center;
+border: solid 5px;
+margin-top:100px;
+margin-left: 500px;
+margin-right: 500px;
+padding:50px;
+line-height: 1.5;
+}
+
 .overlay{
   display:flex;
   background-color: #7c3626;
@@ -307,16 +325,29 @@ margin-left: 565px;
 .overlayText{
  margin-top: -50px;
 margin-left: 50px;
+line-height: 1.6;
+overflow:scroll;
+font-size: 17px;
+color:#050505;
+}
+.overlayText > p{
+  color: #050505;
+}
+.overlayText >ul >li{
+  color:#050505;
+}
+.overlayText >ul>li>ul>li{
+  color: #050505;
+}
+.overlayText >ul>li>ul>li{
+  color: #050505;
 }
 
 .aboutUsTitle{
-  margin-top: 100px;
+  margin-top: 135px;
+  margin-bottom:100px;
 }
 
-.aboutUsImg{
-  width: 40%;
-  max-height:20%;
-}
 
 .contactForm{
 text-align: center;
@@ -351,4 +382,43 @@ width:300px;
 
 .contactFormTitle{
 margin-top: 100px;
+}
+
+.aboutUsImg{
+  width: 400px;
+  height:400px;
+}
+
+.aboutImgs{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.overlayTitle{
+  text-align:center;
+  font-size:45px;
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color:#050505;
+}
+
+.subheadings{
+  color:#050505;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#contactFormMessage{
+display:none;
+color:#7c3626;
+  font-size: 25px;
+  opacity:0.5;
+  text-align: center;
+  border: solid 5px;
+  margin-left: 600px;
+margin-right: 600px;
+padding:20px;
+
 }

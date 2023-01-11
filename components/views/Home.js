@@ -12,13 +12,16 @@ export default state => html`
         <img class="roundBorder" src="${soloDriverInsideView}" />
       </div>
       <div class="soloText">
-        <h2>This is a beautiful picture.</h2>
+        <h2>Find your next affordable adventure.</h2>
       </div>
     </div>
 
     <div class="secondContainer">
       <div class="soloText">
-        <h2>This is a beautiful picture.</h2>
+        <h2>
+          Don't let finances stop you from exploring the world! Check out our
+          list of affordable trips.
+        </h2>
       </div>
       <div class="soloImg">
         <img class="roundBorder" src="${groupLookingAtMap}" />

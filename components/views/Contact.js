@@ -5,6 +5,10 @@ export default () => html`
     <div class="centerText">
       <h2 class="tripsTitle contactFormTitle">Contact Form</h2>
       <h4 class="tripDesc">GET IN TOUCH</h4>
+      <p id="contactFormMessage">
+        Thank you for reaching out! We have received your message and will be in
+        touch soon!
+      </p>
     </div>
     <div class="formContainer">
       <form id="myForm" class="contactForm" method="POST" action="">
