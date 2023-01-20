@@ -16,15 +16,14 @@ export default () => html`
     </div>
     <div>
       <p class="tripDesc aboutText">
-        Traveling On A Budget application was built with those in mind who want
-        to see the world but don’t think they can afford it. Seeing and visiting
-        parts of the world you have or have not been to can expand your mind and
-        make you a more well rounded human. Some people want to take a break
-        from work and everyday life to have fun and go on an adventure but don’t
-        think they can afford. Some need to get away and relax but never thought
-        it possible because of their finances. And some just want to spend time
-        with loved ones in a different setting but don’t want to break the bank.
-        These things and more inspired this capstone.
+        Traveling On A Budget was created with those in mind who want to see the
+        world but don’t think they can afford it. Seeing and visiting parts of
+        the world you have or have not been to can expand your mind and make you
+        a more well rounded human. Whether you want to take a break from work
+        and everyday life to have fun and go on an adventure but don’t think you
+        can afford it. Or you want to get away and relax but never thought it
+        possible because of your finances. These things and more inspired this
+        site.
       </p>
     </div>
   </section>
