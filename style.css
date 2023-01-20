@@ -34,7 +34,6 @@ img {
   margin-right: auto;
   width: 50%;
 }
-
 nav > ul {
   display: flex;
   justify-content: space-evenly;
@@ -91,42 +90,6 @@ ul {
 }
 
 /* Add a black background color to the top navigation */
-.topNav {
-  background-color: #050505;
-  overflow: hidden;
-  margin:0;
-  position:fixed;
-  left: 0;      /* ADDED */
-  top: 0;       /* ADDED */
-  width: 100%;
-  }
-
-  /* Style the links inside the navigation bar */
-  .topNav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  }
-
-  /* Change the color of links on hover */
-  .topNav a:hover {
-    background-color: #f6ae2d;
-    color: black;
-  }
-
-  /* Add a color to the active/current link */
-  .topNav a.active {
-  background-color: ##f6ae2d;
-  color: white;
-  }
-
-  .activeNav{
-    background-color: #5b7b7a;
-    color:black;
-  }
 
   .firstContainer {
     display: flex;
@@ -421,4 +384,54 @@ color:#7c3626;
 margin-right: 600px;
 padding:20px;
 
+}
+
+  @media (max-width: 549px){
+    .hidden--mobile {
+      display: none !important;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    nav > i {
+      padding: 1rem;
+      font-size: 2em;
+    }
+
+    nav > ul {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 0 0;
+    }
+
+    nav > ul > li {
+      padding: 0.5rem;
+      list-style-type: none;
+    }
+  }
+
+
+@media (min-width: 550px) {
+  nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0;
+  }
+
+  nav > ul > li {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 0.5rem 0.5rem;
+    border-radius: 25px;
+  }
+
+  nav > .fa-bars {
+    display: none;
+  }
 }

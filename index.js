@@ -17,6 +17,10 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
+  document.querySelector(".fa-bars").addEventListener("click", () => {
+    document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+  });
+
   if (state.view === "Trips") {
     const choices = [];
     const beaches = Array.from(document.getElementsByClassName("beach"));
@@ -81,7 +85,7 @@ function afterRender(state) {
       };
       console.log("request Body", requestData);
       axios
-        .post(`${process.env.CONTACT_FORM_API_URL}/ContactForms`, requestData)
+        .post(`${process.env.CONTACT_FORM_API_URL}/contactForms`, requestData)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
           document.getElementById("myForm").reset();

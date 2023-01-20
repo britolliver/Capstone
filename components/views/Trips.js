@@ -62,7 +62,7 @@ export default state => html`
 </div>
 
 <section class="soloTripLayout">
-<div class="myOverlay city" onclick="openNav()">
+<div class="myOverlay city " onclick="openNav()">
 
 <div class="container">
 <img class="tripImage" src="${TheArch}" />
@@ -181,7 +181,7 @@ export default state => html`
     If you are visiting ${
       state.parks.newYork
     } and are interested in visiting the oldest and largest known excavated burial ground in North America for free and enslaved AFricans, you should visit the
-    <a href="/${state.parks.newYorkUrl}">${
+    <a target="_blank" href="${state.parks.newYorkUrl}">${
   state.parks.newYorkFullName
 }.</a> Here is a list of activities they have <ul>
 ${state.parks.newYorkActivities.map(
@@ -307,13 +307,13 @@ ${state.parks.newYorkActivities.map(
 <p>
   If you are visiting ${
     state.parks.washingtonDC
-  } and are interested in visiting the historical home of the National Women's Party you should visit the <a href="/${
+  } and are interested in visiting the historical home of the National Women's Party you should visit the <a target="_blank" href="/${
   state.parks.womenEqualityInDCUrl
 }">${state.parks.womenEqualityInDCFullName}.</a>
-If you have time you could also visit <a href="/${
+If you have time you could also visit <a target="_blank" href="/${
   state.parks.africanAmericanMemorialInDCUrl
 }">${state.parks.africanAmericanMemorialInDCFullName}</a> or the
-<a href="/${state.parks.anacostiaParkInDCUrl}">${
+<a target="_blank" href="/${state.parks.anacostiaParkInDCUrl}">${
   state.parks.anacostiaParkInDCFullName
 }.</a>
 </p>
@@ -463,7 +463,7 @@ If you have time you could also visit <a href="/${
   If you are visiting ${
     state.parks.georgia
   } and are interested in visiting the deadliest ground of the American Civil War, you should visit the
-  <a href="/${state.parks.georgiaUrl}">${
+  <a target="_blank" href="/${state.parks.georgiaUrl}">${
   state.parks.georgiaFullName
 }.</a> Here is a list of activities they have <ul>
 ${state.parks.georgiaActivities.map(
