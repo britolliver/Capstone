@@ -10,11 +10,11 @@ export default () => html`
       <h2 class="tripsTitle aboutUsTitle">About Us</h2>
       <div class="aboutImgs">
         <img class="aboutUsImg" src="${twoPassports}" />
-        <img class="aboutUsImg" src="${planeInTrees}" />
-        <img class="aboutUsImg" src="${travelMap}" />
+        <img class="aboutUsImg plane" src="${planeInTrees}" />
+        <img class="aboutUsImg map" src="${travelMap}" />
       </div>
     </div>
-    <div>
+    <div class="aboutDiv">
       <p class="tripDesc aboutText">
         Traveling On A Budget was created with those in mind who want to see the
         world but don’t think they can afford it. Seeing and visiting parts of

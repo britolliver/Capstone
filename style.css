@@ -389,7 +389,6 @@ padding:20px;
     display: none !important;
   }
 
-
   nav {
     display: flex;
     align-items: flex-start;
@@ -400,7 +399,6 @@ padding:20px;
     background-position-x: center;
     background-position-y: 32%;
     padding-bottom: 1em;
-
   }
 
   nav > i {
@@ -426,7 +424,7 @@ padding:20px;
    text-decoration: none;
    font-size: 1.2em;
   }
-  .logoContainer{
+ .logoContainer{
  display:none;
   }
 
@@ -454,6 +452,35 @@ padding-bottom: 3em;
   .homeImg{
     width:90%
   }
+
+.plane{
+  display:none;
+}
+
+.map{
+  display: none;
+}
+
+.aboutDiv{
+  display:grid;
+}
+
+.aboutText{
+margin:1em;
+font-size: 1.2em;
+}
+
+.aboutUsImg{
+  width:75%;
+  height:15%;
+  margin-top: -3.5em;
+  margin-bottom: 3em;
+}
+
+.aboutUsTitle{
+ margin-top: 10%;
+}
+
 }
 
 @media (min-width: 550px) {
