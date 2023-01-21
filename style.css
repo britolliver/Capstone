@@ -20,6 +20,7 @@ margin-left:auto;
   height:700px;
   background-image:url('./assets/img/TravelOnABudgetLogo.png');
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 .logo{
   display:flex;
@@ -34,12 +35,11 @@ img {
   margin-right: auto;
   width: 50%;
 }
+
 nav > ul {
   display: flex;
   justify-content: space-evenly;
-
 }
-
 nav > ul > li {
   display:flex;
   align-items: center;
@@ -75,9 +75,7 @@ nav > ul > li {
   margin-left: 50px;
 }
 
-a{
-  color: #EDF2F4;
-}
+
 p{
   color:white;
 }
@@ -386,52 +384,125 @@ padding:20px;
 
 }
 
-  @media (max-width: 549px){
-    .hidden--mobile {
-      display: none !important;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    nav > i {
-      padding: 1rem;
-      font-size: 2em;
-    }
-
-    nav > ul {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 0 0;
-    }
-
-    nav > ul > li {
-      padding: 0.5rem;
-      list-style-type: none;
-    }
+@media (max-width: 549px) {
+  .hidden--mobile {
+    display: none !important;
   }
 
 
-@media (min-width: 550px) {
+  nav {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-image:url('./assets/img/TravelOnABudgetLogo.png');
+    background-size: 38%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 32%;
+    padding-bottom: 1em;
+
+  }
+
+  nav > i {
+    padding: 1rem;
+    font-size: 2em;
+    color: black;
+  }
+
   nav > ul {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
     padding: 0 0;
   }
 
   nav > ul > li {
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid;
-    padding: 0.5rem 0.5rem;
-    border-radius: 25px;
+    padding: 0.5rem;
+    list-style-type: none;
   }
+
+  nav > ul > li > a {
+   color:#5b7b7a;
+   text-decoration: none;
+   font-size: 1.2em;
+  }
+  .logoContainer{
+ display:none;
+  }
+
+.firstContainer{
+  display:grid;
+  padding-top: 1.5em;
+  margin-top: 1.5em;
+}
+.secondContainer{
+  display:grid;
+padding-top: 3em;
+padding-bottom: 3em;
+  }
+
+  .soloImg{
+    margin:0;
+    padding-top: 3em;
+  }
+
+  .soloText {
+    font-size: .75rem;
+    padding-left: 0;
+    text-align: center;
+  }
+  .homeImg{
+    width:90%
+  }
+}
+
+@media (min-width: 550px) {
 
   nav > .fa-bars {
     display: none;
   }
+
+  .topNav {
+    display:flex;
+    background-color: #050505;
+    overflow: hidden;
+    margin:0;
+    position:fixed;
+    left: 0;      /* ADDED */
+    top: 0;       /* ADDED */
+    width: 100%;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topNav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.1em;
+    }
+
+    /* Change the color of links on hover */
+    .topNav a:hover {
+      background-color: #f6ae2d;
+      color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topNav a.active {
+    background-color: ##f6ae2d;
+    color: white;
+    }
+
+    .activeNav{
+      background-color: #5b7b7a;
+      color:black;
+    }
+
 }
+
+
+
+
+
