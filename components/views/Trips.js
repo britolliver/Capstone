@@ -11,7 +11,7 @@ import Tulum from "../../assets/img/tulum.jpg";
 import TulumBeach from "../../assets/img/tulumbeach.jpg";
 import NewOrleans from "../../assets/img/neworleans.jpg";
 import FrenchQuarter from "../../assets/img/frenchquarter.jpg";
-import Portland from "../../assets/img/portland.jpg";
+import Portland from "../../assets/img/portlandcity.jpg";
 import MamaDut from "../../assets/img/mamadut.jpg";
 import Atlanta from "../../assets/img/atlanta.jpg";
 import NightAtlanta from "../../assets/img/nightatlanta.jpg";

@@ -15,7 +15,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "stylelint.enable": true,
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "Material Theme",
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "file-icons",
   "workbench.view.alwaysShowHeaderActions": true,
