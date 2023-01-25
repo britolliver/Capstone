@@ -11,13 +11,14 @@ import Tulum from "../../assets/img/tulum.jpg";
 import TulumBeach from "../../assets/img/tulumbeach.jpg";
 import NewOrleans from "../../assets/img/neworleans.jpg";
 import FrenchQuarter from "../../assets/img/frenchquarter.jpg";
-import Portland from "../../assets/img/portland.jpg";
+import Portland from "../../assets/img/portlandcity.jpg";
 import MamaDut from "../../assets/img/mamadut.jpg";
 import Atlanta from "../../assets/img/atlanta.jpg";
 import NightAtlanta from "../../assets/img/nightatlanta.jpg";
 
 export default state => html`
 
+<button class="filter">Filter</button>
   <form class="form" action="">
   <p class="sideSearchTitle">
     Looking for something specific?
@@ -391,10 +392,10 @@ If you have time you could also visit <a target="_blank" href="/${
 </div>
 
 <div class="myOverlay city" onclick="openPortland()">
-<div class="container">
-<img class="tripImage" src="${Portland}" />
+<div class="container portland">
+<img class="tripImage portlandImg" src="${Portland}" />
 <div class="middle">
-<div class="text">Portland, OR</div>
+<div class="text">Portland, Oregon</div>
 </div>
 </div>
 </div>
