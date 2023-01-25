@@ -465,14 +465,26 @@ display:none;
   flex-direction: column;
 }
 
+.container{
+  position: relative;
+  text-align: center;
+}
+
 .middle{
- display: none;
+  position: absolute;
+  top: 10px;
+  left: 60px;
 }
 .tripImage{
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+}
+
+.text{
+  color: #EDF2F4;
+  font-size: 1.2em;
 }
 
 
