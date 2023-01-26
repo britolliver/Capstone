@@ -18,8 +18,12 @@ import NightAtlanta from "../../assets/img/nightatlanta.jpg";
 
 export default state => html`
 
+<div class="tripsNavBar">
 <button class="filter">Filter</button>
-  <form class="form" action="">
+</div>
+
+  <form class="form smallScreenForm" action="">
+  <a class="closebtn">&times</a>
   <p class="sideSearchTitle">
     Looking for something specific?
   </p>
@@ -48,7 +52,7 @@ export default state => html`
   <input class="btn" id="submit" type="submit" value="See Results" />
 <button
     onClick="window.location.reload();"
-    class="btn"
+    class="clearbtn"
   >
     Clear
   </button>
