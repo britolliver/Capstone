@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default () => html`
-  <div>
+  <div class="aboutPageLayout">
     <div class="centerText">
       <h2 class="tripsTitle contactFormTitle">Contact Form</h2>
       <h4 class="tripDesc">GET IN TOUCH</h4>
@@ -56,10 +56,11 @@ export default () => html`
           <div class="padding">
             <input
               id="submit"
-              class="btn"
+              class="submitbtn"
               type="submit"
               name="submit"
               value="Submit"
+              size="25"
             />
           </div>
         </div>
