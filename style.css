@@ -350,9 +350,6 @@ margin-right: 600px;
 padding:20px;
 
 }
-.filter{
-  display:none;
-}
 
 @media (max-width: 549px) {
   .hidden--mobile {
@@ -448,13 +445,61 @@ font-size: 1.2em;
 }
 
 .aboutUsTitle{
- margin-top: 10%;
+  margin-top: 10%;
+}
+
+.tripsNavBar{
+  display:flex;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #EDF2F4;
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
+}
+
+.tripsNavBar button{
+  color:#5b7b7a;
+  text-align: center;
+  padding: 5px 8px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .form{
 display:none;
+height:100%;
+width:0;
+z-index:1;
+top:0;
+left:0;
+overflow-x:hidden;
+transition: 0.5s;
 }
 
+.form .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color:#050505;
+}
+.btn{
+  padding: 8px 10px;
+  width:50%;
+  margin-left:25%;
+}
+.clearbtn{
+  background-color:#f6ae2d;
+  border:none;
+  padding: 8px 10px;
+  margin-top: 15px;
+  margin-left: 37%;
+  text-align: center;
+  border-radius: 15px;
+  width:25%;
+}
 .soloPage{
   display:grid;
   margin:0;
@@ -465,16 +510,6 @@ display:none;
   flex-direction: column;
 }
 
-.container{
-  position: relative;
-  text-align: center;
-}
-
-.middle{
-  position: absolute;
-  top: 10px;
-  left: 60px;
-}
 .tripImage{
   display: block;
   margin-left: auto;
@@ -483,17 +518,25 @@ display:none;
 }
 
 .text{
-  color: #EDF2F4;
+  color: #f2f2f2;
   font-size: 1.2em;
 }
-
-
+.container{
+  margin-bottom: 4em;
+}
+.middle{
+  margin-top:-5em;
+  margin-left: 3em;
+}
 }
 
 @media (min-width: 550px) {
 
   nav > .fa-bars {
     display: none;
+  }
+  .tripsNavBar{
+    display:none;
   }
 
   .topNav {

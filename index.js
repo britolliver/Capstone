@@ -66,10 +66,14 @@ function afterRender(state) {
         }
       });
     });
-    // document.getElementById("clearSearch").addEventListener("click", () => {
-    //   const section = document.querySelector("section");
-    //   section.innerHTML = section;
-    // });
+    document.querySelector(".filter").addEventListener("click", () => {
+      document.querySelector(".form").style.display = "flex";
+      document.querySelector(".form").style.width = "65%";
+    });
+
+    document.querySelector(".closebtn").addEventListener("click", () => {
+      document.querySelector(".form").style.display = "none";
+    });
   }
 
   if (state.view === "Contact") {
