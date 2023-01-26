@@ -162,7 +162,7 @@ export default state => html`
   </a>
   <img class="overlayImg" src="${newYork}" />
   <div class="overlayText">
-  <h2 class="overlayTitle">New York</h2>
+  <h2 class="overlayTitle" id="ny">New York</h2>
   <p>Comprised of 5 boroughs and home to Times Square, the Empire State Building, the Statue of Liberty and so much is  New York City. We've all heard of it and a lot of hearts desire to visit it. New York is known for it's night life, exquisite buildings, culture and so much more. While it is very expensive to be, I'm sure with a little finesse, a solo traveler on a budget can make it work. Keep reading for more information on things you can do.</p>
   <h4 class="subheadings">Lodging Ideas</h4>
   <p>
@@ -216,7 +216,7 @@ ${state.parks.newYorkActivities.map(
   <img class="overlayImg" src="${TulumBeach}" />
 
   <div class="overlayText">
-  <h2 class="overlayTitle">Tulum Mexico</h2>
+  <h2 class="overlayTitle" id="tulum" >Tulum Mexico</h2>
   <p>Tulum is a town on the Caribbean coastline of Mexico's Yucatan Peninsula. It's known for its beaches and well-preserved ruins of an ancient Mayan port city. Lots of people take trips here.It's beautiful, fun and can definitely be done on a budget.</p>
   <h4 class="subheadings">Lodging Ideas</h4>
   <p>
@@ -257,7 +257,7 @@ ${state.parks.newYorkActivities.map(
   <img class="overlayImg" src="${FrenchQuarter}" />
 
   <div class="overlayText">
-  <h2 class="overlayTitle">New Orleans, LA</h2>
+  <h2 class="overlayTitle" id="newOrleans">New Orleans, LA</h2>
   <p>New Orleans is a Louisiana city near the Gulf of Mexico. It's know for it's nightlife, vibrant music, and especially the cuisine. It definitely has something for everybody.If you go in February, you could catch it's Mardi Gras festivities.</p>
   <h4 class="subheadings">Lodging Ideas</h4>
   <p>
@@ -410,7 +410,7 @@ If you have time you could also visit <a target="_blank" href="/${
   <img class="overlayImg" src="${MamaDut}" />
 
   <div class="overlayText">
-  <h2 class="overlayTitle">Portland, OR</h2>
+  <h2 class="overlayTitle" id="portland">Portland, OR</h2>
   <p>You might have heard of Portland from different documentaries whether highlighting it's unique culture, food, or houses.Known as the Rose City, it's the largest city in Oregon and is also know for its parks, bridges, art scenes, bicycle paths, etc. </p>
   <h4 class="subheadings">Lodging Ideas</h4>
   <p>
@@ -446,7 +446,7 @@ If you have time you could also visit <a target="_blank" href="/${
   <img class="overlayImg" src="${NightAtlanta}" />
 
   <div class="overlayText">
-  <h2 class="overlayTitle">Atlanta, GA</h2>
+  <h2 class="overlayTitle" id="atlanta">Atlanta, GA</h2>
   <p>Not only is Atlanta the most populous city in Georgia with about almost 500 thousand people, it has gotten global recognition as a place for different movies and tv shows.It has many popular attractions and is a good place to visit even if just for a weekend.</p>
   <h4 class="subheadings">Lodging Ideas</h4>
   <p>
